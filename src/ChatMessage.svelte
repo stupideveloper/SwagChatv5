@@ -6,7 +6,7 @@
 
   const messageClass = message.who === sender ? 'sent' : 'received';
 
-  const avatar = `https://avatars.dicebear.com/api/croodles/${message.who}.svg?b=%23ffffff`;
+  const avatar = `https://avatars.dicebear.com/api/croodles-neutral/${message.who}.svg?b=%23ffffff`;
 
   const ts = new Date(message.when);
 

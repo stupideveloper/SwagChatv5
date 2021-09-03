@@ -81,7 +81,7 @@
 
     <div class="user-bio">
       <span>Hello <strong>{$username}</strong></span>
-      <img class="proilepicture headerpicture" src={`https://avatars.dicebear.com/api/croodles/${$username}.svg?b=%23ffffff`} alt="avatar" /> 
+      <img class="proilepicture headerpicture" src={`https://avatars.dicebear.com/api/croodles-neutral/${$username}.svg?b=%23ffffff`} alt="avatar" /> 
     </div>
 
 
