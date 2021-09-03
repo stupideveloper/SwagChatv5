@@ -5,7 +5,7 @@
 
   let username;
   let password;
-  var isNewUser = true;
+  var isNewUser = false;
   function login() {
     user.auth(username, password, ({ err }) => err && alert(err));
   }
@@ -37,7 +37,7 @@
   }
   .swaggerman {
     margin-top: 4rem;
-    width: 15vw;
+    width: 10vw;
   }
   h2, h3 {
     color: white;
