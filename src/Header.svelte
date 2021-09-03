@@ -86,7 +86,7 @@
 
 
     <div class="dropdown">
-      <button class="dropbtn">⚙️</button>
+      <button class="dropbtn" aria-label="options">⚙️</button>
       <div class="dropdown-content">
         {#if "Notification" in window}
           {#if window.Notification.permission !== "denied"}

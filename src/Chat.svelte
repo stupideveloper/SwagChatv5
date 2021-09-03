@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
   import { username, user } from './user';
   import debounce from 'lodash.debounce';
-  import { onDestroy } from 'svelte'
+  import { EmojiButton } from '@joeattardi/emoji-button';
 
 
   import GUN from 'gun';
@@ -33,6 +33,22 @@
 
   $: debouncedWatchScroll = debounce(watchScroll, 1000);
 
+  onMount(()=>{
+    /*
+    * Emoji Picker
+    */
+    const picker = new EmojiButton({
+      autoHide: false,
+      theme: 'dark',
+    });
+    const trigger = document.querySelector('#emoji-trigger');
+
+    picker.on('emoji', selection => {
+      newMessage = newMessage + selection.emoji
+    });
+
+    trigger.addEventListener('click', () => picker.togglePicker(trigger));
+  })
 
   onMount(() => {
     autoScroll();
@@ -98,7 +114,6 @@ main {
 	flex-direction: column;
   max-width: 100%;
 }
-
 .messageform {
 	height: 8vh;
 	position: fixed;
@@ -111,7 +126,26 @@ main {
 .messageform > input {
 	width: 100%;
 }
-  
+form .gobutton {
+	width: 20%;
+	background-color: #49b86e;
+  color: white;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-left: none;
+}
+form #emoji-trigger {
+  height: 100%;
+  border-radius: 0;
+  border-right: none;
+  border-left: none;
+}
+form .messageinput {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right: none;
+
+}
 </style>
 <div class="container">
     <main id="main" on:scroll={debouncedWatchScroll}>
@@ -127,9 +161,10 @@ main {
     </main>
 
     <form on:submit|preventDefault={sendMessage} class="messageform">
-      <input type="text" placeholder="Type a message..." bind:value={newMessage} maxlength="100" />
+      <input class="messageinput" type="text" placeholder="Type a message..." bind:value={newMessage} maxlength="100" />
+      <button id="emoji-trigger" type="button" aria-label="Select Emoji">🚀</button>
 
-      <button type="submit" disabled={!newMessage} style="height: 100%;">✨</button>
+      <button type="submit" class="gobutton" disabled={!newMessage} style="height: 100%;" aria-label="Send Message">Send</button>
     </form>
 
 

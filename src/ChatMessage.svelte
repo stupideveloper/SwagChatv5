@@ -16,7 +16,6 @@
       spawnNotification(message.what, "/swaggermanbutjpeg.jpg", message.who)
     }
   }
-  
 
 </script>
 <style>
@@ -24,11 +23,12 @@
     max-width: 500px;
     margin: 0;
     line-height: 24px;
-    padding: 10px 20px;
+    padding: 7px 10px;
     border-radius: 4px;
     position: relative;
     color: white;
     text-align: center;
+    font-size: 16px;
   }
   @media only screen and (max-width: 728px) {
     .message-text > p {
@@ -55,7 +55,7 @@
   }
   .sent p {
     color: white;
-    background: #0b93f6;
+    background: #145e94;
     align-self: flex-end;
     text-align: right;
   }

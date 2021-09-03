@@ -70,11 +70,11 @@ p {
     <form>
       <div class="inputarea">
         <label for="username">Username</label>
-        <input name="username" bind:value={username} minlength="3" maxlength="16" />
+        <input name="username" aria-label="Username" bind:value={username} minlength="3" maxlength="16" />
       </div>
       <div class="inputarea">
         <label for="password" >Password</label>
-        <input name="password" bind:value={password} type="password" />
+        <input name="password" aria-label="Password" bind:value={password} type="password" />
       </div>
 
     </form>
@@ -88,11 +88,11 @@ p {
     <form>
       <div class="inputarea">
         <label for="username">Username</label>
-        <input name="username" bind:value={username} minlength="3" maxlength="16" />
+        <input name="username" aria-label="Username" bind:value={username} minlength="3" maxlength="16" />
       </div>
       <div class="inputarea">
         <label for="password" >Password</label>
-        <input name="password" bind:value={password} type="password" />
+        <input name="password" aria-label="Password" bind:value={password} type="password" />
       </div>
 
     </form>
@@ -107,7 +107,7 @@ p {
   <p>TLS: <span class="good">✔</span></p>
 
 {:else}
-  <p>Connection is <span class="bad">not secured</span> by TLS.</p>
+  <p>Connection is <span class="bad"> not secured </span> by TLS.</p>
   <Spacer size={1}/>
   <p>TLS: <span class="bad">✗</span></p>
 {/if}

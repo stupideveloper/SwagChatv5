@@ -4,8 +4,9 @@
   import { username } from './user';
   import Login from './Login.svelte';
   import './styles/global.css'
-</script>
+  
 
+</script>
 <div class="app">
     {#if $username}
       <Header />

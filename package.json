@@ -13,8 +13,14 @@
     "vite": "^2.5.2"
   },
   "dependencies": {
+    "@joeattardi/emoji-button": "^4.6.0",
+    "emoji-js": "^3.6.0",
+    "emoji-mart": "^3.0.1",
+    "emojify": "^1.0.0",
+    "emojify.js": "^1.1.0",
     "gun": "^0.2020.1234",
     "lodash.debounce": "^4.0.8",
-    "lodash.throttle": "^4.1.1"
+    "lodash.throttle": "^4.1.1",
+    "twemoji": "^13.1.0"
   }
 }
