@@ -4,10 +4,10 @@
   import { username, user } from './lib/user';
   import debounce from 'lodash.debounce';
   import { EmojiButton } from '@joeattardi/emoji-button';
-  import PageTransitions from './components/PageTransitions.svelte';
+  import PageTransitions from './components/pageTransitions.svelte';
+  import GUN, { log } from 'gun';
+  import EmojiConvertor from 'emoji-js'
 
-
-  import GUN from 'gun';
   const db = GUN();
 
   let newMessage;
@@ -32,6 +32,7 @@
   $: debouncedWatchScroll = debounce(watchScroll, 1000);
 
   onMount(()=>{
+
     /*
     * Emoji Picker
     */
@@ -49,8 +50,24 @@
     trigger.addEventListener('click', () => picker.togglePicker(trigger));
   })
 
+  /* 
+  * Emoji Colon Replacer
+  */
+  var emoji = new EmojiConvertor();
+  emoji.replace_mode = 'unified';
+  emoji.allow_native = true;
+
+  function convertEmojis() {
+    const messageInput = document.querySelector('#messageinput')
+    var output = emoji.replace_colons(messageInput.value);
+    messageInput.value = output
+  }
+
   onMount(() => {
     autoScroll();
+    /* 
+    * Regex Shit
+    */
     var match = {
       // lexical queries are kind of like a limited RegEx or Glob.
       '.': {
@@ -166,9 +183,9 @@ form .messageinput {
     </main>
 
     <form on:submit|preventDefault={sendMessage} class="messageform">
-      <input class="messageinput" type="text" placeholder="Type a message..." bind:value={newMessage} maxlength="240" />
+      <input class="messageinput" id="messageinput" type="text" placeholder="Type a message..." bind:value={newMessage} on:input={convertEmojis} maxlength="240" />
       <button id="emoji-trigger" type="button" aria-label="Select Emoji">🚀</button>
-
+      
       <button type="submit" class="gobutton" disabled={!newMessage} style="height: 100%;" aria-label="Send Message">Send</button>
     </form>
 
