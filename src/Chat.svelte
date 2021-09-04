@@ -4,7 +4,7 @@
   import { username, user } from './lib/user';
   import debounce from 'lodash.debounce';
   import { EmojiButton } from '@joeattardi/emoji-button';
-  import PageTransitions from './components/pageTransitions.svelte';
+  import PageTransitions from './components/PageTransitions.svelte';
   import GUN, { log } from 'gun';
   import EmojiConvertor from 'emoji-js'
 

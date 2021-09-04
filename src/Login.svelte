@@ -1,5 +1,5 @@
 <script lang="javascript">
-  import PageTransitions from './components/pageTransitions.svelte';
+  import PageTransitions from './components/PageTransitions.svelte';
   import logo from './assets/swaggerman.webp'
   import Spacer from './components/Spacer.svelte';
   import { user } from './lib/user';
