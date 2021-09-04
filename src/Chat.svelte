@@ -164,7 +164,7 @@ form .messageinput {
     </main>
 
     <form on:submit|preventDefault={sendMessage} class="messageform">
-      <input class="messageinput" type="text" placeholder="Type a message..." bind:value={newMessage} maxlength="100" />
+      <input class="messageinput" type="text" placeholder="Type a message..." bind:value={newMessage} maxlength="240" />
       <button id="emoji-trigger" type="button" aria-label="Select Emoji">🚀</button>
 
       <button type="submit" class="gobutton" disabled={!newMessage} style="height: 100%;" aria-label="Send Message">Send</button>
