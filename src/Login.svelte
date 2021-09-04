@@ -36,8 +36,8 @@
     color: rgb(154, 154, 154);
   }
   .swaggerman {
-    margin-top: 4rem;
-    width: 10vw;
+    margin-top: 1rem;
+    width: 15vw;
   }
   h2, h3 {
     color: white;

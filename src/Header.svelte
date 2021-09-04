@@ -59,6 +59,8 @@
   z-index: 1;
   color: white;
   right: 0;
+  border: 1px solid var(--border-color);
+    border-radius: 5px;
 }
 
 .dropdown-content button {

@@ -18,9 +18,6 @@
   let unreadMessages = true;
 
 
-
-  
-
   function autoScroll() {
     setTimeout(() => scrollBottom?.scrollIntoView({ behavior: 'smooth' }), 300);
     unreadMessages = false;
@@ -44,7 +41,8 @@
     const trigger = document.querySelector('#emoji-trigger');
 
     picker.on('emoji', selection => {
-      newMessage = newMessage + selection.emoji
+      const prevMessage = newMessage ? newMessage : ''
+      newMessage = prevMessage + selection.emoji
     });
 
     trigger.addEventListener('click', () => picker.togglePicker(trigger));
@@ -61,7 +59,9 @@
       '-': 1, // filter in reverse
     };
 
-    // Get Messages
+    /*
+    * On Message Recived
+    */
     db.get('chatmessage')
       .map(match)
       .once(async (data, id) => {
@@ -90,6 +90,9 @@
       autoScroll();
   });
 
+  /* 
+  * Send Message
+  */
   async function sendMessage() {
     const secret = await SEA.encrypt(newMessage, '#foo');
     const message = user.get('all').set({ what: secret });
@@ -105,7 +108,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	min-height: 100vh;
+	min-height: 80vh;
 	background-color: rgb(26, 26, 26);
 }
 main {
