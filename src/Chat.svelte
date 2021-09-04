@@ -131,7 +131,8 @@
 	background-color: rgb(26, 26, 26);
 }
 main {
-	height: 82vh;
+  padding-bottom: 1vh;
+	height: 81vh;
 	overflow-y: scroll;
 	flex-direction: column;
   max-width: 100%;
