@@ -60,7 +60,7 @@
   function convertEmojis() {
     const messageInput = document.querySelector('#messageinput')
     var output = emoji.replace_colons(messageInput.value);
-    messageInput.value = output
+    messageInput.value = output + " "
   }
 
   onMount(() => {
