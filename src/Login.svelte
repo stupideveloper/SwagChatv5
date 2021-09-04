@@ -3,6 +3,7 @@
   import logo from './assets/swaggerman.webp'
   import Spacer from './components/Spacer.svelte';
   import { user } from './lib/user';
+  import CurrentVersion from './components/CurrentVersion.svelte'
 
   let username;
   let password;
@@ -132,5 +133,7 @@ p {
   {:else}
   <p>NOTIFICATION CAPABLE: <span class="bad">✗</span></p>
   {/if}
+  <Spacer size={1}/>
+  <p>SwagChat Version:&nbsp;<CurrentVersion /></p>
   <Spacer size={1}/>
 </PageTransitions>
