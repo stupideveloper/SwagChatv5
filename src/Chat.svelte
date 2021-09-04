@@ -1,9 +1,10 @@
 <script>
-  import ChatMessage from './ChatMessage.svelte';
+  import ChatMessage from './components/ChatMessage.svelte';
   import { onMount } from 'svelte';
-  import { username, user } from './user';
+  import { username, user } from './lib/user';
   import debounce from 'lodash.debounce';
   import { EmojiButton } from '@joeattardi/emoji-button';
+  import PageTransitions from './components/PageTransitions.svelte';
 
 
   import GUN from 'gun';
@@ -102,6 +103,7 @@
     canAutoScroll = true;
     autoScroll();
   }
+
 </script>
 <style>
   .container {
@@ -112,14 +114,13 @@
 	background-color: rgb(26, 26, 26);
 }
 main {
-	height: 80vh;
+	height: 82vh;
 	overflow-y: scroll;
 	flex-direction: column;
   max-width: 100%;
 }
 .messageform {
 	height: 8vh;
-	position: fixed;
 	bottom: 0;
 	width: 100%;
 	max-width: 728px;
@@ -150,7 +151,8 @@ form .messageinput {
 
 }
 </style>
-<div class="container">
+<PageTransitions>
+  <div class="container">
     <main id="main" on:scroll={debouncedWatchScroll}>
       <div>
         <h2 style="color: #9a9a9a; font-weight: bolder;">Welcome to the start of chat..</h2>
@@ -180,5 +182,7 @@ form .messageinput {
         👇
       </button>
     </div>
-   {/if}
-</div>
+  {/if}
+  </div>
+
+</PageTransitions>

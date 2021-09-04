@@ -1,7 +1,7 @@
 <script>
-  import { username, user } from './user';
-  import { notifications } from './notifications'
-  import { spawnNotification } from './notifications'
+  import { username, user } from '../lib/user';
+  import { notifications } from '../lib/notifications'
+  import { spawnNotification } from '../lib/notifications'
   function signout() {
     user.leave();
     username.set('');

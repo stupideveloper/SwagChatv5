@@ -1,5 +1,5 @@
 <script>
-  import { notifications, spawnNotification } from './notifications'
+  import { notifications, spawnNotification } from '../lib/notifications'
 
   export let message;
   export let sender;
