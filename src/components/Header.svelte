@@ -2,6 +2,7 @@
   import { username, user } from '../lib/user';
   import { notifications } from '../lib/notifications'
   import { spawnNotification } from '../lib/notifications'
+  import CurrentVersion from './CurrentVersion.svelte'
   function signout() {
     user.leave();
     username.set('');
@@ -77,7 +78,7 @@
 
 </style>
 <header>
-  <h1>SwagChat<span style="color: #9a9a9a;"><sup>v5</sup></span></h1>
+  <h1>SwagChat<span style="color: #9a9a9a;"><sup><CurrentVersion /></sup></span></h1>
 
   {#if $username}
 

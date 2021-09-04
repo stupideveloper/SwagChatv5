@@ -106,12 +106,12 @@ p {
     </div>
   {/if}
   {#if document.location.protocol == 'https:'}
-    <p>Connection is &nbsp;<span class="good">secured</span>&nbsp;by TLS and is encrypted.</p>
+    <p>Connection is&nbsp;<span class="good">secured</span>&nbsp;by TLS and is encrypted.</p>
     <Spacer size={1}/>
     <p>TLS: <span class="good">✔</span></p>
 
   {:else}
-    <p>Connection is &nbsp;<span class="bad">not secured</span>&nbsp; by TLS.</p>
+    <p>Connection is&nbsp;<span class="bad">not secured</span>&nbsp;by TLS.</p>
     <Spacer size={1}/>
     <p>TLS: <span class="bad">✗</span></p>
   {/if}
