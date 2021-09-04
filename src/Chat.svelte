@@ -57,12 +57,11 @@
   emoji.replace_mode = 'unified';
   emoji.allow_native = true;
 
-  function convertEmojis() {
-    const messageInput = document.querySelector('#messageinput')
-    var output = emoji.replace_colons(messageInput.value);
-    messageInput.value = output + " "
+  function convertEmojis(input) {
+    var output = emoji.replace_colons(input);
+    return output
   }
-
+  
   onMount(() => {
     autoScroll();
     /* 
@@ -112,6 +111,7 @@
   * Send Message
   */
   async function sendMessage() {
+    newMessage = convertEmojis(newMessage)
     const secret = await SEA.encrypt(newMessage, '#foo');
     const message = user.get('all').set({ what: secret });
     const index = new Date().toISOString();
@@ -183,7 +183,10 @@ form .messageinput {
     </main>
 
     <form on:submit|preventDefault={sendMessage} class="messageform">
-      <input class="messageinput" id="messageinput" type="text" placeholder="Type a message..." bind:value={newMessage} on:input={convertEmojis} maxlength="240" />
+      <input class="messageinput" id="messageinput" type="text" placeholder="Type a message..." bind:value={newMessage} on:input={(e)=>{
+        const messageInput = document.querySelector('#messageinput')
+        messageInput.value = convertEmojis(messageInput.value)
+        }} maxlength="240" />
       <button id="emoji-trigger" type="button" aria-label="Select Emoji">🚀</button>
       
       <button type="submit" class="gobutton" disabled={!newMessage} style="height: 100%;" aria-label="Send Message">Send</button>
