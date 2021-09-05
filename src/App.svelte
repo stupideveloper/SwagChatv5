@@ -4,6 +4,10 @@
   import { username } from './lib/user';
   import Login from './Login.svelte';
   import './styles/global.css'
+
+
+
+    
 </script>
 <div class="app">
     {#if $username}

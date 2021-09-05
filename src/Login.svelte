@@ -67,7 +67,7 @@ p {
 </style>
 
 <PageTransitions>
-  <img src={logo} alt="Swaggerman" class="swaggerman" >
+  <img src={logo} alt="Swaggerman" class="swaggerman">
   {#if isNewUser}
     <div>
       <h2>Sign up</h2>

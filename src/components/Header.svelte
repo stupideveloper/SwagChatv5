@@ -10,15 +10,15 @@
 
   function togglenotifications() {
     if ($notifications === true) {
-      spawnNotification("Notifications have been disabled, visit settings to enable.", "/swaggermanbutjpeg.jpg", "SwagChatv5")
+      spawnNotification("Notifications have been disabled, visit settings to enable.", "/swaggermanbutjpeg2.jpg", "SwagChatv5")
       notifications.set(false)
     } else {
       if (Notification.permission === "granted") {
-        spawnNotification("Notifications have been enabled, visit settings to disable.", "/swaggermanbutjpeg.jpg", "SwagChatv5")
+        spawnNotification("Notifications have been enabled, visit settings to disable.", "/swaggermanbutjpeg2.jpg", "SwagChatv5")
       } else if (Notification.permission !== "denied") {
           Notification.requestPermission().then(function (permission) {
           if (permission === "granted") {
-            spawnNotification("Notifications have been enabled, visit settings to disable.", "/swaggermanbutjpeg.jpg", "SwagChatv5")
+            spawnNotification("Notifications have been enabled, visit settings to disable.", "/swaggermanbutjpeg2.jpg", "SwagChatv5")
           } else {
             alert("Notifications were not allowed.")
           }

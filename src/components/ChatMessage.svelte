@@ -13,7 +13,7 @@
   // Send Notification
   if ($notifications && message.who !== sender) {
     if (message.who) {
-      spawnNotification(message.what, "/swaggermanbutjpeg.jpg", message.who)
+      spawnNotification(message.what, "/swaggermanbutjpeg2.jpg", message.who)
     }
   }
 
