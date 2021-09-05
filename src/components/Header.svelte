@@ -3,6 +3,7 @@
   import { notifications } from '../lib/notifications'
   import { spawnNotification } from '../lib/notifications'
   import CurrentVersion from './CurrentVersion.svelte'
+import { onMount } from 'svelte';
   function signout() {
     user.leave();
     username.set('');
@@ -27,6 +28,7 @@
       notifications.set(true)
     } 
   }
+
 </script>
 <style>
   h1 {

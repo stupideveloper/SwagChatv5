@@ -120,7 +120,7 @@
     canAutoScroll = true;
     autoScroll();
   }
-
+  
 </script>
 <style>
   .container {
@@ -189,7 +189,6 @@ form .messageinput {
         messageInput.value = convertEmojis(messageInput.value)
         }} maxlength="240" />
       <button id="emoji-trigger" type="button" aria-label="Select Emoji">🚀</button>
-      
       <button type="submit" class="gobutton" disabled={!newMessage} style="height: 100%;" aria-label="Send Message">Send</button>
     </form>
 

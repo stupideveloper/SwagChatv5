@@ -3,7 +3,7 @@
   "background_color": "#1a1a1a",
   "display": "fullscreen",
   "scope": "/",
-  "start_url": "/?home=true",
+  "start_url": "/?home=true&source=pwa",
   "name": "SwagChatv5",
   "short_name": "SwagChat",
   "description": "SwagChatv5 is a decentralised chat messaging platform for highly restricted networks.",
