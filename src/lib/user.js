@@ -4,11 +4,17 @@ import 'gun/axe';
 import { writable } from 'svelte/store';
 
 // Database
-export const db = GUN({peers: ['https://swagchat-backend-v5-eu.herokuapp.com/gun','https://192.168.194.207:8765/gun', 'https://localhost:8765/gun']});
+export const db = GUN({peers: [
+    'https://swagchat-backend-v5-eu.herokuapp.com/gun',
+    'https://192.168.194.207:8765/gun',
+    'https://localhost:8765/gun',
+    'https://gun-us.herokuapp.com/gun',
+    'https://gun-eu.herokuapp.com/gun'
+]
+});
 
-setInterval(() => {
-    console.dir(db._.opt.peers)
-}, 1000);
+// TODO 
+// ADD db._.opt.peers display
 
 // Gun User
 export const user = db.user().recall({sessionStorage: true});

@@ -32,7 +32,6 @@
   $: debouncedWatchScroll = debounce(watchScroll, 1000);
 
   onMount(()=>{
-
     /*
     * Emoji Picker
     */

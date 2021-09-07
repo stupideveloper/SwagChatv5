@@ -106,6 +106,10 @@ import { onMount } from 'svelte';
 
         {/if}
         <button on:click={signout}>Sign Out</button>
+        <button on:click={()=>{
+          window.localStorage.removeItem('gun/');
+        }} style="color: red; font-weight: bold;">EMERGENCY! CLEAR DATA!</button>
+
       </div>
     </div>
 
