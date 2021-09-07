@@ -1,6 +1,5 @@
 <script>
   import Chat from './Chat.svelte';
-  import Video from './Video.svelte';
   import Header from './components/Header.svelte';
   //import { username } from './lib/user';
   import Login from './Login.svelte';
